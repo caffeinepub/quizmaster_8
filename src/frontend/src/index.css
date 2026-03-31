@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Dark navy palette — always-dark design */
+    --background: 0.08 0.03 264;
+    --foreground: 0.97 0.01 255;
+    --card: 0.13 0.048 264;
+    --card-foreground: 0.97 0.01 255;
+    --popover: 0.16 0.05 264;
+    --popover-foreground: 0.97 0.01 255;
+
+    /* Cyan primary */
+    --primary: 0.82 0.11 200;
+    --primary-foreground: 0.09 0.038 264;
+
+    /* Muted navy */
+    --secondary: 0.16 0.048 264;
+    --secondary-foreground: 0.97 0.01 255;
+    --muted: 0.16 0.045 264;
+    --muted-foreground: 0.72 0.032 252;
+
+    /* Accent slightly lighter navy */
+    --accent: 0.19 0.05 264;
+    --accent-foreground: 0.97 0.01 255;
+
+    /* Destructive red */
+    --destructive: 0.52 0.15 25;
+    --destructive-foreground: 0.97 0.01 255;
+
+    /* Borders and inputs */
+    --border: 0.97 0.01 255;
+    --input: 0.16 0.048 264;
+    --ring: 0.82 0.11 200;
+
+    /* Charts */
+    --chart-1: 0.82 0.11 200;
+    --chart-2: 0.67 0.15 160;
+    --chart-3: 0.67 0.12 75;
+    --chart-4: 0.52 0.15 25;
+    --chart-5: 0.72 0.032 252;
+
+    /* Sidebar (same as card) */
+    --sidebar: 0.13 0.048 264;
+    --sidebar-foreground: 0.97 0.01 255;
+    --sidebar-primary: 0.82 0.11 200;
+    --sidebar-primary-foreground: 0.09 0.038 264;
+    --sidebar-accent: 0.19 0.05 264;
+    --sidebar-accent-foreground: 0.97 0.01 255;
+    --sidebar-border: 0.97 0.01 255;
+    --sidebar-ring: 0.82 0.11 200;
+  }
+
+  * {
+    @apply border-border/10;
+  }
+
+  html,
+  body {
+    background: linear-gradient(
+      160deg,
+      oklch(0.08 0.03 264),
+      oklch(0.1 0.042 264)
+    );
+    min-height: 100vh;
+    @apply text-foreground;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .quiz-card {
+    background: linear-gradient(
+      135deg,
+      oklch(0.13 0.048 264),
+      oklch(0.15 0.052 264)
+    );
+    border: 1px solid oklch(0.97 0.01 255 / 0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .answer-card {
+    background: oklch(0.13 0.048 264);
+    border: 2px solid oklch(0.97 0.01 255 / 0.08);
+    transition: all 0.2s ease;
+  }
+
+  .answer-card:hover {
+    border-color: oklch(0.82 0.11 200 / 0.5);
+    background: oklch(0.16 0.055 264);
+  }
+
+  .answer-card.selected {
+    border-color: oklch(0.82 0.11 200);
+    background: oklch(0.82 0.11 200 / 0.1);
+  }
+
+  .answer-card.correct {
+    border-color: oklch(0.67 0.15 160);
+    background: oklch(0.67 0.15 160 / 0.12);
+  }
+
+  .answer-card.incorrect {
+    border-color: oklch(0.52 0.15 25);
+    background: oklch(0.52 0.15 25 / 0.12);
+  }
+
+  .btn-cyan {
+    background: linear-gradient(
+      135deg,
+      oklch(0.82 0.11 200),
+      oklch(0.85 0.115 195)
+    );
+    color: oklch(0.09 0.038 264);
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(37, 214, 232, 0.25);
+    transition: all 0.2s ease;
+  }
+
+  .btn-cyan:hover {
+    box-shadow: 0 12px 28px rgba(37, 214, 232, 0.35);
+    transform: translateY(-1px);
+  }
+
+  .btn-cyan:active {
+    transform: translateY(0);
+  }
+}
